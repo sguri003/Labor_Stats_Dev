@@ -1,11 +1,10 @@
 # AUTHOR: STEVEN M. GURIDI
 # DATA: 2025-06-21
-# Description:
-# Retrieving Data from BLS to understand key labor sectors. 
+# Description: Retrieving Data from BLS to understand key labor sectors. 
 # To use this class, each use must provide their own BLS API Version 2
 # registration key from here: https://data.bls.gov/registrationEngine/
 
-#NOTE: OPEN SOURCE PROJECT. 
+#NOTE: OPEN SOURCE PROJECT @https://github.com/sguri003/Labor_Stats_Dev
 
 
 # To use the c_bls_data class, create an instance with below parameter in constructor:

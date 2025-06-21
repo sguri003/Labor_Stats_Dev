@@ -1,7 +1,7 @@
 # 
 # Name:     run_get_bls_data.py
-# Date:     April 14, 2022
-# Author:   Randy Runtsch
+# Date:     2025-06-20
+# Author:   STEVEN M. GURIDI
 #
 # Description:
 #
@@ -16,7 +16,8 @@ from labor_US import labor_US
 # See the code in c_bls_data.py for descriptions of the class's input parameters.
 #
 
-# Create and instance of c_bls_data to retrieve cpi data for 1) all items and 2) regular gasoline from the years 2003 through 2022.
+# Create and instance of c_bls_data to retrieve cpi data for 1) all items and 2)
+# regular gasoline from the years 2003 through 2022.
 
 # Requested BLS data series IDs and titles:
 #

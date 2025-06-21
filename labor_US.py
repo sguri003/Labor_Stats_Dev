@@ -4,11 +4,11 @@
 # Retrieving Data from BLS to understand key labor sectors. 
 # To use this class, each use must provide their own BLS API Version 2
 # registration key from here: https://data.bls.gov/registrationEngine/
-#
+
+#NOTE: OPEN SOURCE PROJECT. 
 
 
-# To use the c_bls_data class, create an instance with these inputs:
-#
+# To use the c_bls_data class, create an instance with below parameter in constructor:
 # 1. BLS API registration key.
 # 2. Full path of file where program will write the output data in CSV form.
 # 2. List of BLS data series IDs.
@@ -16,9 +16,9 @@
 # 4. End year of data.
 #
 import os 
-import requests
 import json
 import csv
+import requests
 
 class labor_US:
     #CONSTRUCTOR W/API KEY, OUTPUT FILE, START AND END YEAR
@@ -81,7 +81,7 @@ class labor_US:
         #open file to be written to CSV. 
         with open(self.out_file_nm, mode = 'w', newline = '') as data_file:
             #Series ID is category such as Gasoline, Groceries. 
-            fieldnames = ['Series ID', 'Month', 'Value', 'Annual Percent Change']
+            fieldnames = ['Series ID', 'Year', 'Value']
             d_wrtr = csv.writer(data_file, delimiter = ',', quotechar = '"', quoting = csv.QUOTE_ALL)
             #Place Headers
             d_wrtr.writerow(fieldnames)
@@ -94,14 +94,14 @@ class labor_US:
                     period_name = item['periodName']
                     value = item['value']
                     # Get the 12-month change
-                    calculations = item['calculations']
-                    pct_changes = calculations['pct_changes']
-                    annual_pct_chg = pct_changes['12']
+                    #calculations = item['calculations']
+                    #pct_changes = calculations['pct_changes']
+                    #annual_pct_chg = pct_changes['12']
                     # Create a month field in the format of a date for 
                     # the first day of each month (for example: January 1, 2022).
-                    month = period_name + ' 1, ' + year
+                    #month = period_name + ' 1, ' + year
                     #Write the CSV record to the output file.
-                    d_wrtr.writerow([series_id, month, value, annual_pct_chg])
+                d_wrtr.writerow([series_id, year, value])
     
     def get_lumber():
         return False

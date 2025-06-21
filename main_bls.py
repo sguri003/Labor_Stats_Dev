@@ -8,8 +8,8 @@
 # Use the c_bls_data class to obtain series of data
 # from the US Bureau of Labor Statistics (BLS) API.
 import csv
-import pandas as pd         
-import numpy as np  
+import numpy as np
+import pandas as pd
 from labor_US import labor_US
 
 # 

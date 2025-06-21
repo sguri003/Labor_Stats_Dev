@@ -27,8 +27,8 @@ class labor_US:
         parameters = json.dumps({'seriesid' : series_id, 'startyear' : start_year, 'endyear' : end_year, 'calculations' : True , 'registrationkey' : reg_key})
         # Get data in JSON format and then write it to a CSV file.
         json_data = self.get_cpi(headers, parameters)
-        #self.data_to_csv(json_data)
-        self.get_energy(json_data)
+        self.data_to_csv(json_data)
+        #self.get_energy(json_data)
         
     #retrive cpi data from BLS API
     def get_cpi(self, headers, parameters):

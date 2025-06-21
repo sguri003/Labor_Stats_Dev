@@ -5,3 +5,5 @@ Building Object Oriented model, starting with Highest Granularity which is the t
 Instead of relying on Breauray of Labor Statistics https://www.bls.gov/ models I will build one myself that is correct and can be altered at the drop of hat.
 
 Let's begin our jouney of Version Control.
+
+PERFOMED BY GDS DATA SOLUTIONS.

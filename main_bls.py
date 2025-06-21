@@ -1,0 +1,33 @@
+# 
+# Name:     run_get_bls_data.py
+# Date:     April 14, 2022
+# Author:   Randy Runtsch
+#
+# Description:
+#
+# Use the c_bls_data class to obtain series of data
+# from the US Bureau of Labor Statistics (BLS) API.
+import csv
+import pandas as pd         
+import numpy as np  
+from labor_US import labor_US
+
+# 
+# See the code in c_bls_data.py for descriptions of the class's input parameters.
+#
+
+# Create and instance of c_bls_data to retrieve cpi data for 1) all items and 2) regular gasoline from the years 2003 through 2022.
+
+# Requested BLS data series IDs and titles:
+#
+# CUSR0000SA0 - All items in U.S. city average, all urban consumers, seasonally adjusted
+# CUSR0000SETB01 - Gasoline (all types) in U.S. city average, all urban consumers, seasonally adjusted
+# CUSR0000SAF1 - Food in U.S. city average, all urban consumers, seasonally adjusted
+# CUSR0000SETA02 - Used cars and trucks in U.S. city average, all urban consumers, seasonally adjusted
+#
+df_ky = pd.read_csv('BLS_API_KEY.csv')
+BLS_API_KEY = df_ky['API'][0]
+#OUTPUT DEFLATOR ID: IPUCN2211__T051000000, REAL SECTOR OUTPUT ID: IPUCN2211__T011000000
+bls_dt = labor_US(BLS_API_KEY, 'POWER DELIVER GDP.CSV' , ['IPUCN2211__T051000000', 'IPUCN2211__T011000000'], 2008, 2022 )
+#bls_dt = labor_US(BLS_API_KEY, 'Power_Delivery.csv',['IPUAN1111__L010000000', ] ,2000, 2024) 
+#bls_dt = labor_US(BLS_API_KEY, 'CPI_Tracking.csv',['CUSR0000SA0', 'CUSR0000SETB01', 'CUSR0000SAF1', 'CUSR0000SETA02', ], 2019, 2025)

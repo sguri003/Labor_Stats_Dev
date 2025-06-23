@@ -1,10 +1,8 @@
-# 
 # Name:     run_get_bls_data.py
 # Date:     2025-06-20
 # Author:   STEVEN M. GURIDI
 #
 # Description:
-#
 # Use the c_bls_data class to obtain series of data
 # from the US Bureau of Labor Statistics (BLS) API.
 import csv

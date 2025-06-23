@@ -17,8 +17,7 @@ from labor_US import labor_US
 # Create and instance of c_bls_data to retrieve cpi data for 1) all items and 2)
 # regular gasoline from the years 2003 through 2022.
 
-# Requested BLS data series IDs and titles:
-#
+# @params API Key, Export_File, Series ID, start year, and year
 # CUSR0000SA0 - All items in U.S. city average, all urban consumers, seasonally adjusted
 # CUSR0000SETB01 - Gasoline (all types) in U.S. city average, all urban consumers, seasonally adjusted
 # CUSR0000SAF1 - Food in U.S. city average, all urban consumers, seasonally adjusted

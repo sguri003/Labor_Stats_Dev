@@ -1,19 +1,12 @@
 # AUTHOR: STEVEN M. GURIDI
 # DATA: 2025-06-21
-# Description: Retrieving Data from BLS to understand key labor sectors. 
-# To use this class, each use must provide their own BLS API Version 2
+# NOTES: Retrieving Data from BLS to understand key labor sectors. 
+# To use this LABOR_US class, each use must provide their own BLS API Version 2
 # registration key from here: https://data.bls.gov/registrationEngine/
 
 #NOTE: OPEN SOURCE PROJECT @https://github.com/sguri003/Labor_Stats_Dev
 
-
 # To use the c_bls_data class, create an instance with below parameter in constructor:
-# 1. BLS API registration key.
-# 2. Full path of file where program will write the output data in CSV form.
-# 2. List of BLS data series IDs.
-# 3. Start year of data.
-# 4. End year of data.
-#
 import os 
 import json
 import csv

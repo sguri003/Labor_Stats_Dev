@@ -19,7 +19,7 @@ from CPI_Puller import CPI_Puller
 # CUSR0000SETB01 - Gasoline (all types) in U.S. city average, all urban consumers, seasonally adjusted
 # CUSR0000SAF1 - Food in U.S. city average, all urban consumers, seasonally adjusted
 # CUSR0000SETA02 - Used cars and trucks in U.S. city average, all urban consumers, seasonally adjusted
-df_ky = pd.read_csv('BLS_API_KEY.csv')
+df_ky = pd.read_csv('API_KEY.csv')
 BLS_API_KEY = df_ky['API'][0]
 #OUTPUT DEFLATOR ID: IPUCN2211__T051000000, REAL SECTOR OUTPUT ID: IPUCN2211__T011000000
 #bls_dt = labor_US(BLS_API_KEY, 'POWER DELIVER SG.CSV' , ['IPUCN2211__T051000000', 'IPUCN2211__T011000000'], 2000, 2022 )

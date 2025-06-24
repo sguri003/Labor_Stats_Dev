@@ -24,6 +24,6 @@ BLS_API_KEY = df_ky['BLS_API'][0]
 #OUTPUT DEFLATOR ID: IPUCN2211__T051000000, REAL SECTOR OUTPUT ID: IPUCN2211__T011000000
 #bls_dt = labor_US(BLS_API_KEY, 'POWER DELIVER SG.CSV' , ['IPUCN2211__T051000000', 'IPUCN2211__T011000000'], 2000, 2022 )
 #CPI for Gas, Groceries, necessities. 
-bls_dt = CPI_Puller(BLS_API_KEY, 'CPI_2019_MTD.csv',
+bls_dt = CPI_Puller(BLS_API_KEY, 'CPI_1990_MTD.csv',
                     ['CUSR0000SA0', 'CUSR0000SETB01', 'CUSR0000SAF1', 'CUSR0000SETA02']
-                    , 2019, 2025)
+                    , 1990, 2025)

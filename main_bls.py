@@ -28,5 +28,6 @@ BLS_API_KEY = df_ky['BLS_API'][0]
 bls_dt = CPI_Puller(BLS_API_KEY, 'CPI_1990_MTD.csv',
                         ['CUSR0000SA0', 'CUSR0000SETB01', 'CUSR0000SAF1', 'CUSR0000SETA02']
                         , 2000, 2025)
-#Power_Delivery = Power_Delivery(BLS_API_KEY, 'POWER_SECTOR_OUTPUT.csv',
-                               # ['IPUCN2211__T051000000', 'IPUCN2211__T011000000'], 2008, 2023 )
+Power_Delivery = Power_Delivery(BLS_API_KEY, 'POWER_SECTOR_OUTPUT.csv'
+                                ,['IPUCN2211__T051000000', 'IPUCN2211__T011000000']
+                                , 2008, 2023 )

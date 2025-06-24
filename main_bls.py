@@ -9,6 +9,7 @@ import csv
 import numpy as np
 import pandas as pd
 from CPI_Puller import CPI_Puller
+from Power_Delivery import Power_Delivery
 
 # See the code in c_bls_data.py for descriptions of the class's input parameters.
 # Create and instance of c_bls_data to retrieve cpi data for 1) all items and 2)
@@ -25,5 +26,7 @@ BLS_API_KEY = df_ky['BLS_API'][0]
 #bls_dt = labor_US(BLS_API_KEY, 'POWER DELIVER SG.CSV' , ['IPUCN2211__T051000000', 'IPUCN2211__T011000000'], 2000, 2022 )
 #CPI for Gas, Groceries, necessities. 
 bls_dt = CPI_Puller(BLS_API_KEY, 'CPI_1990_MTD.csv',
-                    ['CUSR0000SA0', 'CUSR0000SETB01', 'CUSR0000SAF1', 'CUSR0000SETA02']
-                    , 1990, 2025)
+                        ['CUSR0000SA0', 'CUSR0000SETB01', 'CUSR0000SAF1', 'CUSR0000SETA02']
+                        , 2000, 2025)
+#Power_Delivery = Power_Delivery(BLS_API_KEY, 'POWER_SECTOR_OUTPUT.csv',
+                               # ['IPUCN2211__T051000000', 'IPUCN2211__T011000000'], 2008, 2023 )

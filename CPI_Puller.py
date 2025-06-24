@@ -1,4 +1,3 @@
-# AUTHOR: STEVEN M. GURIDI
 # DATA: 2025-06-21
 # NOTES: Retrieving Data from BLS to understand key labor sectors. 
 # To use this LABOR_US class, each use must provide their own BLS API Version 2

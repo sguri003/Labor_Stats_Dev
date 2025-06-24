@@ -48,4 +48,5 @@ class Power_Delivery:
                     period_name = item['periodName']
                     value = item['value']
                     d_wrtr.writerow([series_id, year, value])
+                    
     

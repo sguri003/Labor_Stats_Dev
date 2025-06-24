@@ -7,6 +7,9 @@ import os
 import json
 import csv
 import requests
+import numpy as np    
+import pandas as pd      
+
 
 class US_Labor_Force:
     #CONSTRUCTOR FOR POWER DELIVERY. 
@@ -49,4 +52,29 @@ class US_Labor_Force:
                     period_name = item['periodName']
                     value = item['value']
                     d_wrtr.writerow([series_id, year, value])
+    
+    def Labor_to_DF(self, json_data):
+        if os.path.exists(self.out_file_nm):
+            os.remove(self.out_file_nm)
+            print(f"File '{self.out_file_nm}' deleted successfully.")
+        else:
+            print(f"File '{self.out_file_nm}' does not exist.")    
+        #open file to be written to CSV. 
+        with open(self.out_file_nm, mode = 'w', newline = '') as data_file:
+            #Series ID is category such as Gasoline, Groceries. 
+            fieldnames = ['Series ID', 'Year', 'Value']
+            d_wrtr = csv.writer(data_file, delimiter = ',', quotechar = '"', quoting = csv.QUOTE_ALL)
+            #Place Headers
+            d_wrtr.writerow(fieldnames)
+            # Write each record to the output file.
+            for series in json_data['Results']['series']:
+                series_id = series['seriesID']
+                for item in series['data']:
+                    # Get the basic data
+                    year = item['year']
+                    period_name = item['periodName']
+                    value = item['value']
+                    d_wrtr.writerow([series_id, year, value])
+        dt = pd.DataFrame(data=self.out_file_nm)
+        print(dt)
     

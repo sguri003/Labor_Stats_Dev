@@ -47,13 +47,5 @@ class Power_Delivery:
                     year = item['year']
                     period_name = item['periodName']
                     value = item['value']
-                    # Get the 12-month change
-                    #calculations = item['calculations']
-                    #pct_changes = calculations['pct_changes']
-                    #annual_pct_chg = pct_changes['12']
-                    # Create a month field in the format of a date for 
-                    # the first day of each month (for example: January 1, 2022).
-                    #month = period_name + ' 1, ' + year
-                    #Write the CSV record to the output file.
-                d_wrtr.writerow([series_id, year, value])
+                    d_wrtr.writerow([series_id, year, value])
     

@@ -12,7 +12,7 @@ import csv
 import requests
 import numpy as np                
 import pandas as pd                   
-
+#new comming
 class CPI_Puller:
     #CONSTRUCTOR APsI KEY, OUTPUT FILE, START AND END YEAR
     def __init__(self, reg_key, out_file_nm, series_id, start_year, end_year):        # Set the file name variable and create the parameters for the API request.

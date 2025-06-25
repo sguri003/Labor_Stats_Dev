@@ -12,9 +12,6 @@ from CPI_Puller import CPI_Puller
 from Power_Delivery import Power_Delivery
 from US_Labor_Force import US_Labor_Force
 
-# See the code in c_bls_data.py for descriptions of the class's input parameters.
-# Create and instance of c_bls_data to retrieve cpi data for 1) all items and 2)
-# regular gasoline from the years 2003 through 2022.
 
 # @params API Key, Export_File, Series ID, start year, and year
 # CUSR0000SA0 - All items in U.S. city average, all urban consumers, seasonally adjusted

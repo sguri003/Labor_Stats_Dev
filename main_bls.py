@@ -11,6 +11,7 @@ import pandas as pd
 from CPI_Puller import CPI_Puller
 from Power_Delivery import Power_Delivery
 from US_Labor_Force import US_Labor_Force
+from Lumber import US_Lumber
 
 
 # @params API Key, Export_File, Series ID, start year, and year
@@ -26,12 +27,15 @@ BLS_API_KEY = df_ky['BLS_API'][0]
 #CPI-->CUSR0000SA0 ALL URBAN AREAS
 bls_dt = CPI_Puller(BLS_API_KEY, 'CPI_1990_MTD.csv',
                         ['CUSR0000SA0', 'CUSR0000SETB01', 'CUSR0000SAF1', 'CUSR0000SETA02']
-                        , 2000, 2025)
+                        , 2006, 2025)
 Power_Delivery = Power_Delivery(BLS_API_KEY, 'POWER_SECTOR_OUTPUT.csv'
                                 ,['IPUCN2211__T051000000', 'IPUCN2211__T011000000']
-                                , 2008, 2023 )
+                                , 2006, 2023 )
 # Labor Civilian Workforce code: LNS11000000, Employment code: LNS12000000
 # 16 years and older and under 65 years old all civilians
 Labor = US_Labor_Force(BLS_API_KEY, 'Labor_Force.csv'
                                 ,['LNS11000000']
-                                , 2015, 2025 )
+                                , 2006, 2025 )
+#PCU321991321991  Manufactured home, mobile home, manufacturing
+Lumber = US_Lumber(BLS_API_KEY, 'LUMBER_HOUSES.CSV',
+                ['PCU321991321991'], 2006, 2025)

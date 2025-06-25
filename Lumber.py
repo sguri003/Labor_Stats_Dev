@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd      
 
 
-class US_Labor_Force:
+class US_Lumber:
     #CONSTRUCTOR FOR POWER DELIVERY. 
     def __init__(self, reg_key, out_file_nm, series_id, start_year, end_year):        # Set the file name variable and create the parameters for the API request.
         #instance variables of CPI_Puller classs
@@ -19,11 +19,11 @@ class US_Labor_Force:
         headers = {'Content-type': 'application/json'}
         parameters = json.dumps({'seriesid' : series_id, 'startyear' : start_year, 'endyear' : end_year, 'calculations' : True , 'registrationkey' : reg_key})
         # Get data in JSON format and then write it to a CSV file.
-        json_data = self.get_Labor(headers, parameters)
+        json_data = self.get_lumber(headers, parameters)
         #@param json data retrieve civilian labor force. 
-        self.Labor_to_DF(json_data)
+        self.lumber_pull(json_data)
         
-    def get_Labor(self, headers, parameters):
+    def get_lumber(self, headers, parameters):
         #Fire Post to end point BLS Grab Json
         post = requests.post('https://api.bls.gov/publicAPI/v2/timeseries/data/', data = parameters, headers = headers)
         json_data = json.loads(post.text)
@@ -31,7 +31,7 @@ class US_Labor_Force:
     
     #Pull Active Labor Force ages 16-65 years old
     #@param @self @json_data 
-    def Labor_to_DF(self, json_data):
+    def lumber_pull(self, json_data):
         if os.path.exists(self.out_file_nm):
             os.remove(self.out_file_nm)
             print(f"File '{self.out_file_nm}' deleted successfully.")

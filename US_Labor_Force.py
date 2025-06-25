@@ -21,7 +21,7 @@ class US_Labor_Force:
         # Get data in JSON format and then write it to a CSV file.
         json_data = self.get_Labor(headers, parameters)
         #@param json data retrieve civilian labor force. 
-        self.get_Labor_Force(json_data)
+        self.Labor_to_DF(json_data)
         
     def get_Labor(self, headers, parameters):
         #Fire Post to end point BLS Grab Json
@@ -75,6 +75,7 @@ class US_Labor_Force:
                     period_name = item['periodName']
                     value = item['value']
                     d_wrtr.writerow([series_id, year, value])
-        dt = pd.DataFrame(data=self.out_file_nm)
-        print(dt)
+        dt = pd.read_csv(self.out_file_nm)
+        df = pd.DataFrame(data=dt)
+        print(df)
     

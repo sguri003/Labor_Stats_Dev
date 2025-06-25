@@ -10,6 +10,8 @@ import os
 import json
 import csv
 import requests
+import numpy as np                
+import pandas as pd                   
 
 class CPI_Puller:
     #CONSTRUCTOR APsI KEY, OUTPUT FILE, START AND END YEAR
@@ -62,38 +64,7 @@ class CPI_Puller:
                     month = period_name + ' 1, ' + year
                     #Write the CSV record to the output file.
                     d_wrtr.writerow([series_id, month, value, annual_pct_chg])
-    
-    #pulling power deliver codes NAICS 2211 API series ID IPUCN2211__W200000000, IPUCN2211__U101000000
-    def get_energy(self, json_data):
-        if os.path.exists(self.out_file_nm):
-            os.remove(self.out_file_nm)
-            print(f"File '{self.out_file_nm}' deleted successfully.")
-        else:
-            print(f"File '{self.out_file_nm}' does not exist.")    
-        #open file to be written to CSV. 
-        with open(self.out_file_nm, mode = 'w', newline = '') as data_file:
-            #Series ID is category such as Gasoline, Groceries. 
-            fieldnames = ['Series ID', 'Year', 'Value']
-            d_wrtr = csv.writer(data_file, delimiter = ',', quotechar = '"', quoting = csv.QUOTE_ALL)
-            #Place Headers
-            d_wrtr.writerow(fieldnames)
-            # Write each record to the output file.
-            for series in json_data['Results']['series']:
-                series_id = series['seriesID']
-                for item in series['data']:
-                    # Get the basic data
-                    year = item['year']
-                    period_name = item['periodName']
-                    value = item['value']
-                    # Get the 12-month change
-                    #calculations = item['calculations']
-                    #pct_changes = calculations['pct_changes']
-                    #annual_pct_chg = pct_changes['12']
-                    # Create a month field in the format of a date for 
-                    # the first day of each month (for example: January 1, 2022).
-                    #month = period_name + ' 1, ' + year
-                    #Write the CSV record to the output file.
-                d_wrtr.writerow([series_id, year, value])
-    
-    def get_lumber():
-        return False
+        #place in dataframe format from
+        dt = pd.read_csv(self.out_file_nm)
+        df_cpi = pd.DataFrame(data=dt)
+        print(df_cpi)

@@ -75,6 +75,7 @@ class US_Labor_Force:
                     period_name = item['periodName']
                     value = item['value']
                     d_wrtr.writerow([series_id, year, value])
+        #Write into data frame format.
         dt = pd.read_csv(self.out_file_nm)
         df = pd.DataFrame(data=dt)
         print(df)

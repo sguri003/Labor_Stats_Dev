@@ -33,6 +33,7 @@ Power_Delivery = Power_Delivery(BLS_API_KEY, 'POWER_SECTOR_OUTPUT.csv'
                                 , 2006, 2023 )
 # Labor Civilian Workforce code: LNS11000000, Employment code: LNS12000000
 # 16 years and older and under 65 years old all civilians
+#Pay and Benefits NBU20530000000000033030
 Labor = US_Labor_Force(BLS_API_KEY, 'Labor_Force.csv'
                                 ,['LNS11000000']
                                 , 2006, 2025 )

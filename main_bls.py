@@ -39,4 +39,4 @@ Labor = US_Labor_Force(BLS_API_KEY, 'Labor_Force.csv'
                                 , 2006, 2025 )
 #PCU321991321991  Manufactured home, mobile home, manufacturing
 Lumber = US_Lumber(BLS_API_KEY, 'LUMBER_HOUSES.CSV',
-                ['PCU321991321991'], 2006, 2025)
+                ['PCU321991321991', 'PCU32541-32541'], 2006, 2025)
